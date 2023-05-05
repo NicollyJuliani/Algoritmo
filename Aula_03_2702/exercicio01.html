@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - Operações aritméticas e variáveis + innerHTML</title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2> Fases do sono </h2>
+        Quantas horas de sono você dormiu?
+        <input id="input_horas">
+        <br> <br>
+        <button onclick="btn_calcular()"> Calcular Sono</button>
+        <div id="div_sono"></div>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function btn_calcular() {
+        var horas = Number(input_horas.value);
+
+        var fase1 = `<u>${(horas * 5) / 100}</u> horas na fase 1`;
+        var fase2 = `<u>${(horas * 45) / 100}</u> horas na <b>fase 2</b>`;
+        var fase3 = `<u>${(horas * 30) / 100}</u> horas na <b>fase 3</b>`;
+        var fase4 = `<u>${(horas * 20) / 100}</u> horas na fase <b>REM</b>`;
+
+        div_sono.innerHTML = `<br> Ao dormir <u>${horas}</u> horas, você dormiu: 
+     <br>   ${fase1} <br> ${fase2} <br> ${fase3} <br> ${fase4}`
+
+    }
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dragon Ball </title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="formulario">
+            <h2> Dragon Ball </h2>
+
+            Qual ki do seu guerreiro Sayajin: <br>
+            <input id="input_ki">
+            <br> <br>
+            Transformar em...
+            <br><br>
+            <button onclick="btn_ssj()"> SSJ </button>
+
+            <button onclick="btn_ssj2()"> SSJ2 </button>
+
+            <button onclick="btn_ssj3()"> SSJ3 </button>
+
+            <div id="div_ki"></div>
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function btn_ssj() {
+        var k = Number(input_ki.value)
+        var conta = `${k * 50}`;
+        var mostrar = `Após se transformar em ${k}, o ki desse Sayajin passa a ser de ${conta}`
+        div_ki.innerHTML = `${mostrar}`
+    }
+
+    function btn_ssj2() {
+        var k = Number(input_ki.value);
+        var conta = `${k * 100}`;
+        var mostrar = `Após se transformar em ${k}, o ki desse Sayajin passa a ser de ${conta}`
+        div_ki.innerHTML = `${mostrar}`
+    }
+
+
+    function btn_ssj3() {
+        var k = Number(input_ki.value)
+        var conta = `${k * 200}`;
+        var mostrar = `Após se transformar em ${k}, o ki desse Sayajin passa a ser de ${conta}`
+
+        div_ki.innerHTML = `${mostrar}`
+    }
+
+
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Itado </title>
+</head>
+
+<body>
+    Saldo da conta:
+    <br> <br>
+    <input id="input_saldo">
+    <br><br>
+    Valor do Débito:
+    <br> <br>
+    <input id="input_valor">
+    <br> <br>
+    <button onclick="btn_conta()">Analisar conta</button>
+    <br><br>
+    <div id="div_conta"></div>
+</body>
+
+</html>
+<script>
+    function btn_conta(){
+        var s = Number(input_saldo.value);
+        var v = Number(input_valor.value);
+        var conta = s - v;
+        var frase = "o saldo atual da conta corrente é: " + conta;
+
+        div_conta.innerHTML = frase;
+
+        if (conta < 0){
+            div_conta.innerHTML =  `<b style ="color: red;"> ${frase} </b`
+        }
+    }
+</script>

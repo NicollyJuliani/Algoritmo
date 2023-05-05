@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 02</title>
+</head>
+<body>
+    Qual seu salário:
+    <input id="input_salario"> <br>
+    <button onclick="confirmar()">Confirmar salário</button>
+    <button onclick="cem()">Pagar conta de 100</button>
+    <button onclick="quinhentos()">Pagar a conta de 500</button>
+    <button onclick="loteria()">Ganhar 2000 na loteria</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    var cliques = 0;
+
+    function confirmar(){
+        var salario = Number(input_salario.value)
+        div_mostrar.innerHTML = `Grana atual R$${salario}`
+    }
+
+    function cem(){
+        var salario = Number(input_salario.value)
+        cliques = salario - 100;
+        div_mostrar.innerHTML = `Grana atual R$${cliques}`
+    }
+
+    function quinhentos(){
+        var salario = Number(input_salario.value)
+        cliques = salario - 500;
+        div_mostrar.innerHTML = `Grana atual R$${cliques}`
+    }
+
+    function loteria(){
+        var salario = Number(input_salario.value)
+        cliques = salario + 2000;
+        div_mostrar.innerHTML = `Grana atual R$${cliques}`
+    }
+</script>

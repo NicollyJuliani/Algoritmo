@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04</title>
+</head>
+<body>
+    <button onclick="esquerda()">Mover p/ Esquerda</button>
+    <button onclick="direira()">Mover p/ Direita</button>
+    Quantos pixels: <input id="input_pixel">
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    var tamanho = 150;
+   div_mostrar.innerHTML = `<img id="img" src="https://th.bing.com/th/id/R.1a5ccbc63a4a6e0dd951a2592b0ea52d?rik=rsnRpPx6NsSMfA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-KGEF6exmS08%2fVPm0RiBtNNI%2fAAAAAAAAygU%2fy-mGkYUpn7s%2fs1600%2fBart_Simpson_Skate_Render.png&ehk=BaNYooHSGi1kcYHcn1LsQI1uxqVkUBT%2b%2btJymd9Tt1w%3d&risl=&pid=ImgRaw&r=0"  width="${tamanho}px">`
+
+   function esquerda(){
+    var pixel = Number(input_pixel.value);
+
+    div_mostrar.innerHTML = `<img id="img" src="https://th.bing.com/th/id/R.1a5ccbc63a4a6e0dd951a2592b0ea52d?rik=rsnRpPx6NsSMfA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-KGEF6exmS08%2fVPm0RiBtNNI%2fAAAAAAAAygU%2fy-mGkYUpn7s%2fs1600%2fBart_Simpson_Skate_Render.png&ehk=BaNYooHSGi1kcYHcn1LsQI1uxqVkUBT%2b%2btJymd9Tt1w%3d&risl=&pid=ImgRaw&r=0"  width="${tamanho}px" margin-left="${pixel}">`
+   }
+</script>

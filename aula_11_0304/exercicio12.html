@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 12</title>
+</head>
+<body>
+    Qual tabuada você gostaria de vê? <br>
+    <input type="number" id="input_numero">
+    <input  type="number" id="input_multiplicador">
+    <button onclick="tabuada()">Ver tabuada</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function tabuada(){
+        var numero = Number(input_numero.value)
+        var multiplicador = Number(input_multiplicador.value)
+        var contador = 1;
+
+        while(contador <= multiplicador){
+            var conta = numero * contador;
+            div_mostrar.innerHTML += `${numero} x ${contador} = ${conta} <br>`
+
+            contador += 1;
+        }
+    }
+</script>

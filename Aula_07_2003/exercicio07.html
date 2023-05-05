@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 07</title>
+</head>
+<body>
+    Loguin: 
+    <input id="input_loguin"> <br> 
+    Senha:
+    <input type="password" id="input_senha">
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+
+<script>
+    function entrar(){
+        var loguin = input_loguin.value;
+        var senha = input_senha.value;
+
+        if(loguin == "SPTech" && senha == "digital") {
+            alert("Usuário autenticado com sucesso");
+        } else{
+            alert("Falha na autenticação")
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Refris </title>
+</head>
+
+<body>
+    Quantas lata de refrigerante toma por dia : <input id="input_refri">
+<button onclick="btn_refri()">  Quanto refris?</button>
+    <div id="div_refri"></div>
+</body>
+
+</html>
+
+<script>
+    function btn_refri() {
+        var r = Number(input_refri.value);
+        var conta = `${r * 365}`
+
+        if (conta > 500) {
+            div_refri.innerHTML = "Cuidado com a diabete!"
+        }
+    }
+</script>

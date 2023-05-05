@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno</title>
+</head>
+<body>
+    Frequência do aluno: 
+    <input id="input_aluno"><br>
+    <button onclick="analisar_frequencia()">Analisar frequência</button>
+    <div id="div_frequencia"></div>
+</body>
+</html>
+
+<script>
+    function analisar_frequencia(){
+        var aluno = Number(input_aluno.value);
+
+        if (aluno > 50){
+            div_frequencia.innerHTML = `<img src="https://1.bp.blogspot.com/-61EQdEbHCGg/Vr6hm3U3CPI/AAAAAAAACfY/LkOK-utB1qc/s1600/Ponte%2BPensil%2Bturista.jpg"> `
+        } else {
+            div_frequencia.innerHTML = `<img src="https://canaldoensino.com.br/blog/wp-content/uploads/2018/04/livros_de_como_estudar_.jpg"> `
+        }
+
+    }
+</script>

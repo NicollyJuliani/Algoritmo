@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Eleições </title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2> Solicite seus votos </h2>
+        Quantidades de votos do Candidato A:
+        <input id="input_candidatoA">
+        <br>
+        Quantidades de votos do Candidato B:
+        <input id="input_candidatoB">
+        <br>
+        Qantidade de votos brancos:
+        <input id="input_brancos">
+        <br>
+        Qantidade de votos nulos:
+        <input id="input_nulos">
+        <br> <br>
+        <button onclick="btn_resultado()"> Resultado da eleição </button>
+        <div id="div_resultado"></div>
+    </center>
+</body>
+
+</html>
+
+
+<script>
+    function btn_resultado() {
+        var candidatoA = Number(input_candidatoA.value);
+        var candidatoB = Number(input_candidatoB.value);
+        var nulos = Number(input_nulos.value);
+        var brancos = Number(input_brancos.value);
+        var total = Number(candidatoA + candidatoB + nulos + brancos);
+        var frase = `Tolta de votos ${total} `
+
+        var resto = `${(brancos + nulos)}`
+
+        var mostrar = `<br> Candidato A: ${(candidatoA / total) * 100}% (${candidatoA} votos)<br>
+    Candidato B: ${(candidatoB / total) * 100}% (${candidatoB}votos)<br>
+    Inválidos: ${resto} (${resto} votos)`
+
+        div_resultado.innerHTML = `${mostrar}`
+    }
+</script>

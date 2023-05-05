@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 18</title>
+</head>
+<body>
+    Quantas coca-cola vai beber?
+    <input id="coca_cola">
+    <button onclick=" ver()">Ver a quantidade</button>
+    <div id="div_mostrar">
+    </div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        var coca = Number(coca_cola.value)
+        div_mostrar.innerHTML = "";
+        for(var contador = 1; contador <= coca; contador ++){
+        div_mostrar.innerHTML += `<img src="https://i0.wp.com/assets.propmark.com.br/legacy/upload/2015/11/565c86029082e-565c86292f2e2-480x640.jpg?resize=480%2C640&ssl=1" width = "100px";>`
+        }
+    }
+</script>
+

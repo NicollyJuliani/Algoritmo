@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tabuada </title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h2> Tabuada </h2>
+        Digite um número:
+        <input id="input_tabuada">
+        <button onclick="btn_tabuada()"> Ver tabuada </button>
+        <div id="div_tabuada"></div>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function btn_tabuada() {
+        var numero = Number(input_tabuada.value);
+
+        div_tabuada.innerHTML = ` <br>
+       ${numero} x 1 = ${numero * 1} <br> 
+       ${numero} x 2 = ${numero * 2} <br> 
+       ${numero} x 3 = ${numero * 3} <br> 
+       ${numero} x 4 = ${numero * 4} <br> 
+       ${numero} x 5 = ${numero * 5} <br> 
+       ${numero} x 6 = ${numero * 6} <br> 
+       ${numero} x 7 = ${numero * 7} <br> 
+       ${numero} x 8 = ${numero * 8} <br> 
+       ${numero} x 9 = ${numero * 9} <br> 
+      `
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="formulario">
+            <h2> Formulário </h2>
+            Qual seu peso em kg: <br>
+            <input id="input_peso">
+            <br><br>
+            Qual sua altura em metros:<br>
+            <input id="input_altura">
+            <br> <br>
+            <button onclick="btn_imc()"> Calcular IMC </button>
+            <br> <br>
+            <div id="div_imc"></div>
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function btn_imc() {
+        var p = Number(input_peso.value);
+        var a = Number(input_altura.value);
+        var conta = `${p / (a * a)}`;
+        var mostrar = `Seu IMC é de: ${conta}`;
+
+        div_imc.innerHTML = `${mostrar}`;
+    }
+</script>

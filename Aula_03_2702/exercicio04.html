@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="formulario">
+            <h2> Pizza </h2>
+            Sabor da pizza:
+            <input id="input_sabor">
+            <br> <br>
+            Preço da pizza:
+            <input id="input_preco">
+            <br> <br>
+            Quantos amigos vão comer a pizza:
+            <input id="input_amigo">
+            <br> <br>
+            <button onclick="btn_pizza()"> Ver Valor por amigo </button>
+            <br> <br>
+            <div id="div_pizza"></div>
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function btn_pizza() {
+        var s = (input_sabor.value);
+        var p = Number(input_preco.value);
+        var amg = Number(input_amigo.value);
+        var conta = `${(p / amg) * 1.10}`;
+        var mostrar = `Cada amigo vai colaborar com R$${conta} para a pizza de ${s}`
+
+        div_pizza.innerHTML = `${mostrar}`
+    }
+</script>

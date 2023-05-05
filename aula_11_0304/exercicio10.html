@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 10</title>
+</head>
+<body>
+    Intervalo crescente: 
+    <input id="input_crescente"> <br>
+    <button onclick="pares()">S2 pares</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function pares(){
+        var crescente = Number(input_crescente.value);
+        var contador = 0; 
+
+        while(contador <= crescente){
+            div_mostrar.innerHTML += `${contador} <br>`
+
+            contador += 2; 
+        }
+    }
+</script>

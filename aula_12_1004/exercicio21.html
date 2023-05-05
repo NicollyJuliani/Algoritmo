@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 21</title>
+</head>
+<body>
+    Quantos depositos fez no banco? 
+    <input id="input_deposito"> <br>
+     Valor do deposito:
+    <input id="input_valor"> <br> 
+    <button onclick="acompanhar()">Acompanhar grana</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function acompanhar(){
+        var deposito = Number(input_deposito.value);
+        var valor = Number(input_valor.value);
+        var novo_valor = valor;
+        div_mostrar.innerHTML = "";
+
+
+        for(var contador = 1; contador <= deposito; contador ++){
+           
+            if(contador % 3 == 0){ 
+             novo_valor += (novo_valor *1) / 100;
+
+                }
+                div_mostrar.innerHTML += `${contador}º Mês: R$${novo_valor} <br>`;
+
+                if(contador == deposito){
+                    div_mostrar.innerHTML += `Total Guardado: ${novo_valor}`;
+                }
+
+                novo_valor += valor;
+        }
+
+     
+    }
+</script>

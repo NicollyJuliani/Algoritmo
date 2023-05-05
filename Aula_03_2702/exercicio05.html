@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem de ônibus</title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <dvi class="formulario">
+            <h2> Passagem </h2>
+            Valor da passagem:
+            <input id="input_valor">
+            <br> <br>
+            Quantas viagens faz por mês:
+            <input id="input_viagens">
+            <br> <br>
+            Qual a distância da sua casa ao trabalho (por km):
+            <input id="input_casa">
+            <br> <br>
+            <button onclick="btn_passagem()"> Ver Valor gasto </button>
+            <br> <br>
+            <div id="div_passagem"></div>
+        </dvi>
+    </center>
+</body>
+
+</html>
+
+
+<script>
+    function btn_passagem() {
+        var val = Number(input_valor.value);
+        var via = Number(input_viagens.value);
+        var dis = Number(input_casa.value);
+        var conta = `${(val * via) + (dis * 0.75) * 0.10}`;
+        var mostrar = `Você vai gastar R$${conta} por mês com transporte`;
+
+        div_passagem.innerHTML = `${mostrar}`
+    }
+</script>

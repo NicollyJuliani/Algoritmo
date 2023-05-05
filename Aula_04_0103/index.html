@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula if </title>
+</head>
+
+<body>
+    media: <input id="input_media">
+    <button onclick="ver_aprovado()"> Ver aprovação </button>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function ver_aprovado() {
+        var media = Number(input_media.value)
+
+        if (media >= 6) {
+            div_resultado.innerHTML = "Você está aprovado!"
+        }
+
+        if (media < 6) {
+            div_resultado.innerHTML = "Você está reprovado!"
+        }
+    }
+</script>

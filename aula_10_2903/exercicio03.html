@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+</head>
+<body>
+    Nota: 
+    <input id="input_nota"> <br>
+    Frequência:
+    <input id="input_frequencia"> <br>
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var nota = input_nota.value;
+        var frequencia = input_frequencia.value;
+        
+        var validacao = nota >= 6 && frequencia >= 75;
+        var validacao_nota = nota < 6;
+        var validacao_frequencia = frequencia < 75;
+
+        if(validacao){
+            div_mostrar.innerHTML += `Parabéns, aprovado(a)! <br>`
+        } else{
+            div_mostrar.innerHTML = `Reprovado(a)! <br>`
+        }
+        if(validacao_nota){
+            div_mostrar.innerHTML = `Reprovado(a) por nota! <br>`
+        } else if(validacao_frequencia){
+            div_mostrar.innerHTML = `Reprovado(a) por frequencia! <br>`
+        } 
+
+    }
+</script>

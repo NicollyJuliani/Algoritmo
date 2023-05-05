@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+</head>
+<body>
+    Diga algo sobre a matériande algoritmos
+    <input id="input_frase"> <br>
+    <button onclick="mostrar()">Mostrar</button>
+    <div id="mostrar_frase"></div>
+</body>
+</html>
+
+
+<script>
+    function mostrar(){
+        var numero = 1 ;
+        var frase = input_frase.value;
+
+        while (numero <= 7) {
+            mostrar_frase.innerHTML += `${numero}. ${frase} <br>`;
+
+            numero += 1;
+        }
+    }
+    
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pizza </title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <H2> Pizza </H2>
+
+    Qual valor da pizza:
+    <br> <br>
+    <input id="input_pizza">
+    <br><br>
+    Quantidade de amigos: 
+    <br> <br>
+    <input id="input_amigo"> <br><br>
+    <button onclick="btn_pizza()"> Rola a pizza</button> 
+    <br> <br> 
+    <div id="div_pizza"></div>
+</center>
+</body>
+</html>
+
+<script>
+    function btn_pizza(){
+     var v = Number(input_pizza.value);
+     var a = Number(input_amigo.value);
+     var conta = v / a;
+     var frase =  `Cada amigo vai pagar ${conta}`;
+     
+     div_pizza.innerHTML = frase;
+
+     if (conta >20){
+        div_pizza.innerHTML += ` <i style ="color: blue;" ><b>deu ruim! pizza muito cara!</b></i>`   
+     }
+    }
+</script>
+

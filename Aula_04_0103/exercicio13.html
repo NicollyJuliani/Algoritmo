@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota </title>
+</head>
+<body>
+    Nota 1: <br><br>
+    <input id="input_n1">
+    <br><br>
+    Nota 1: <br><br>
+    <input id="input_n2">
+    <br><br>
+    <button onclick="btn_nota()">Verificar situação</button>
+    <br><br>
+    <div id="div_filho"></div>
+</body>
+</html>
+
+<script>
+    function btn_nota(){
+        var n1 = Number(input_n1.value);
+        var n2 = Number(input_n2.value);
+
+        var media = (n1 + n2)/2;
+
+        if (media >= 6){
+            div_filho.innerHTML = "Parabéns, aprovado!" ;
+        }
+      
+        if (media < 6){
+            div_filho.innerHTML = "tente outra vez...";
+        }
+    }
+</script>

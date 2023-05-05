@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia</title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <H2>Renda Familiar </H2>
+
+    Qual valor da renda familiar:
+    <br> <br> 
+    <input id="input_renda">
+    <br><br>
+    Quantidade da prestação: 
+    <br> <br>
+    <input id="input_prestacao"> <br><br>
+    <button onclick="btn_financiamento()"> Verificar financiamento </button> 
+    <br> <br> 
+    <div id="div_renda"></div>
+</center>
+</body>
+</html>
+
+<script>
+    function btn_financiamento(){
+        var v = Number(input_renda.value);
+        var q = Number(input_prestacao.value); 
+        var conta = (q / v ) * 100;
+        var frase = `A prestação correspondente a ${conta}% da renda familiar`;
+
+        div_renda.innerHTML = frase; 
+
+        if (conta > 30 ){
+            div_renda.innerHTML += ` <b style ="color: red;">, será necessario complementar a renda familiar!</b>`   
+        }
+    }
+</script>

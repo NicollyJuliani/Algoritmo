@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 08</title>
+</head>
+
+<body>
+    digite um número até 200:
+    <input id="input_numero">
+    <button onclick="multiplos()">Viva o 7</button>
+    <div id="div_mostrar"></div>
+</body>
+
+</html>
+
+<script>
+    function multiplos() {
+        var numero = Number(input_numero.value);
+        var contador = 0;
+
+        while (contador <= numero) {
+
+            var multiplo = contador % 7;
+            if (multiplo == 0) {
+                div_mostrar.innerHTML += `${contador} <br>`;
+            }
+            contador += 1;
+        }
+
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04</title>
+</head>
+<body>
+    Qual metodo de pagamento:
+    <input id="input_pagamento"> <br>
+    <button onclick="avaliar()">Analisar compra</button>
+    <div id="div_apresentar"></div>
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var pagamento = input_pagamento.value;
+
+        if(pagamento == "dinheiro" || pagamento == "débito"){
+            div_apresentar.innerHTML = "Você terá que pagar a vista";
+        }else if(pagamento == "crédito" || pagamento == "boleto"){
+            div_apresentar.innerHTML = "Pagamento poderá ser parcelado"
+        }
+    }
+</script>

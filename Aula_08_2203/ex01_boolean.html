@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Login: <br>
+    <input type="text" id="input_login">
+
+    <br>
+
+    Senha: <br>
+    <input type="text" id="input_senha">
+
+    <br>
+
+    <button onclick="validarLogin()">Entrar</button>
+
+    <br>
+
+    <div id="mostrarMsg"></div>
+</body>
+</html>
+<script>
+    function validarLogin(){
+        var login = input_login.value;
+        var senha = input_senha.value;
+
+        var vld = login == "aidimin" && senha == "seinha";  
+        var invalido = login != "aidimin" && senha != "seinha";  
+        var login_invalido = login != "aidimin";
+        var senha_invalido = senha != "seinha";
+
+        if(vld){
+            mostrarMsg.innerHTML = `<span style="color: blue;">Usuário autenticado com sucesso!</span>`
+        }
+
+        if(login_invalido){
+            mostrarMsg.innerHTML = `
+            <span style="color: red;">Seu login está inválido</span>`;
+
+            }else if(senha_invalido){
+            mostrarMsg.innerHTML = `
+            <span style="color: red;">Sua senha está inválida!</span>`;
+            alert("Entre em contato com o suporte para recuperar sua senha");
+
+            }else if(invalido){
+            mostrarMsg.innerHTML = `
+            <span style="color: red;">Sua senha está inválida!</span><br>
+            <span style="color: red;">Sua senha está inválida!</span>`
+    
+        }
+    }
+</script>

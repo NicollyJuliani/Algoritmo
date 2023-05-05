@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 15</title>
+</head>
+<body>
+    Quantidades de elefantes: 
+    <input id="input_elefante">
+    <button onclick="atazanar()">Atazanar a médium</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function atazanar(){
+        var elefante = Number(input_elefante.value)        
+        for(var contador = 2 ; contador <= elefante; contador++){
+            div_mostrar.innerHTML += `1 elefante incomoda muita gente! <br>
+            ${contador} elefantes` 
+
+            for(var incomodam = 1; incomodam <= contador; incomodam++){
+                var frase = ' incomodam,';
+                div_mostrar.innerHTML += frase
+            }
+            div_mostrar.innerHTML += ` muito mais! <br>` 
+        }
+
+        
+    }
+</script> 

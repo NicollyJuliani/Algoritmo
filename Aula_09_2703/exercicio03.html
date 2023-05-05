@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+    <style>
+        p{
+            color:blue;
+        }
+        span{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p>Total guardado no cofrinho: R$<span id="span_guardar">0</span></p>
+    <p>Depósitos efetuados: R$<span id="span_deposito">0</span></p>
+    <p>Retiradas efetuadas: R$<span id="span_retirada">0</span></p>
+    <button onclick="deposita_ciquenta()">Depositar 0,50</button>
+    <button onclick="deposita_dois()">Depositar 2,00</button>
+    <button onclick="retira_ciquenta()">Retirar 0,50</button>
+    <button onclick="retira()">Retirar</button>
+</body>
+</html>
+
+<script>
+    var depositar = 0;
+    var retirar = 0;
+    var cliques = 0;
+    var clique = 0;
+
+    function deposita_ciquenta(){
+        depositar += 0.50;
+        cliques += 1;
+
+        span_guardar.innerHTML = depositar;
+        span_deposito.innerHTML = cliques; 
+        
+    }
+
+    function deposita_dois(){
+        depositar += 2;
+        cliques += 1;
+
+        span_guardar.innerHTML = depositar;
+        span_deposito.innerHTML = cliques; 
+        
+    }
+
+    function retira_ciquenta(){
+        retirar -= 0.50;
+        clique += 1; 
+
+        span_guardar.innerHTML = retirar;
+        span_retirada.innerHTML = clique; 
+    }
+
+    function retira(){
+        retirar - retirar;
+        clique += 1;
+
+        span_guardar.innerHTML = retirar;
+        span_retirada.innerHTML = clique;         
+    }
+</script>

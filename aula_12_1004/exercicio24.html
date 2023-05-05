@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 24</title>
+</head>
+<body>
+    digite um número até 100:
+    <input id="input_numero">
+    <button onclick="multiplos()">Ver divisores</button>
+    <div id="div_mostrar"></div>
+</body>
+
+</html>
+
+<script>
+    function multiplos() {
+        var numero = Number(input_numero.value);
+       div_mostrar.innerHTML = "";
+       
+        for( var contador = 0; contador <= numero; contador ++) {
+            var multiplo = numero % contador ;
+            if (multiplo == 0) {
+                div_mostrar.innerHTML += `${contador} <br>`;
+            }
+        }
+
+    }
+</script>

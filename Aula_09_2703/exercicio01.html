@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 01</title>
+</head>
+<body>
+     <div id="div_mostrar">
+    </div> 
+    <button onclick="aumentar_largura()"> Auemnta largura</button>
+    <button onclick="reduzir_largura()">Reduzir largura </button>
+</body>
+</html>
+
+<script>
+    var cliques = 200;
+    div_mostrar.innerHTML= `
+    <img id="img" src="https://i.pinimg.com/originals/62/6c/7a/626c7a0592f19675ab406df83eb352e9.png" width="${cliques}px">`;
+     
+    function aumentar_largura(){
+        cliques += 10;
+        div_mostrar.innerHTML = `<img id="img" src="https://i.pinimg.com/originals/62/6c/7a/626c7a0592f19675ab406df83eb352e9.png" width="${cliques}px">`;
+    }
+
+    function reduzir_largura(){
+        cliques -= 10;
+        div_mostrar.innerHTML = `<img id="img" src="https://i.pinimg.com/originals/62/6c/7a/626c7a0592f19675ab406df83eb352e9.png" width="${cliques}px">`;
+    }
+</script>

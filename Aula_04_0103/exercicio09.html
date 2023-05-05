@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série</title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <H2> Séries </H2>
+
+    Qual a ultima série (sitcom) que você assistiu:
+    <br> <br>
+    <input id="input_serie">
+    <br><br>
+    Quantos episódios já  assistiu: 
+    <br> <br>
+    <input id="input_episodios"> <br><br>
+    <button onclick="btn_nivel()"> Verificar nível</button> 
+    <br> <br> 
+    <div id="div_serie"></div>
+</center>
+</body>
+</html>
+
+
+<script>
+    function btn_nivel(){
+        var s = input_serie.value;
+        var ep = Number(input_episodios.value);
+        var frase = `Vejo que você gosta da série ${s} `;
+        var conta = ep * 22;
+
+        div_serie.innerHTML = frase;
+
+        if (conta > 1800){
+            div_serie.innerHTML += "Uau você realmente gosta dessa série!"
+        }
+
+    }
+</script>

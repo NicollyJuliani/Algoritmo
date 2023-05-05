@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador </title>
+</head>
+<body>
+    Quantidade de mulheres: <br><br>
+    <input id="input_mulher">
+    <br><br>
+    Quantidade de homens:<br><br>
+    <input id="input_homem">
+    <br><br>
+    <button onclick="btn_peso()">Analisar peso</button>
+    <div id="div_peso"></div>
+</body>
+</html>
+
+<script>
+    function btn_peso(){
+        var m = Number(input_mulher.value);
+        var h = Number(input_homem.value);
+        var conta = (m * 60)+(h * 80);
+        var frase = "Este elevador suporta 800kg e o peso estimado desta lotação é de " + conta + "kg.";
+
+        div_peso.innerHTML = frase;
+
+        if (conta > 800){
+            div_peso.innerHTML += `<div style ="color: blue;"> Será necessário descer alguém para que o elevador se movimente</div>` 
+        }
+
+    }
+</script>

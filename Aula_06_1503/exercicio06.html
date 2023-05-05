@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual time grande São Paulo Você torce: 
+    <input id="input_time"> 
+    <button onclick="time()">Fale sobre esse time</button>
+    <div id="div_time"></div>
+</body>
+</html>
+<script>
+    function time(){
+        var time = input_time.value; 
+
+        if(time == "corinthians" ){
+            div_time.innerHTML = `<p style="background-color: black; color: white">Salve o Corinthians</p>`;
+            } else if (time == "palmeiras") {
+            div_time.innerHTML = `<p style="background-color: green; color: black">Salve o alviverde imponente</p>`;
+            } else if(time == "santos"){
+                div_time.innerHTML = `<p style="background-color: white; color: black"> Agora quem dá a bola é o Santos</p>`;
+            } if (time == "são paulo"){
+                div_time.innerHTML = `<p style="background-color: black; color: red">Salve o Tricolor paulista</p>`;
+            }
+}
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04</title>
+</head>
+
+<body>
+    Qual sua idade?
+    <input id="input_idade">
+    <button onclick="mostrar()">Ver fases da vida</button>
+    <div id="div_mostrar"></div>
+</body>
+
+</html>
+
+<script>
+
+    var pontos = 0;
+
+    function mostrar() {
+        var idade = input_idade.value;
+
+        var infancia = idade >= 12;
+        var adolescente = idade >= 18;
+        var idoso = idade >= 65;
+
+
+        if (infancia) {
+            pontos += 10;
+        }
+        if (adolescente) {
+            pontos += 20;
+
+        }
+        if (idoso) {
+            pontos += 50;
+
+        }
+
+        div_mostrar.innerHTML = `
+        já passou pela infancia: ${infancia}
+        <br>
+        já passou pela adolescencia: ${adolescente}
+        <br>
+        já é um idoso: ${idoso}
+        <br>
+        TOTAL DE PONTOS: ${pontos}`
+
+
+    }
+</script>

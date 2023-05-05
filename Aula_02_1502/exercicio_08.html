@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - operações aritmédicas</title>
+</head>
+
+<style>
+    body{
+        background-color: rgb(197, 145, 245);
+        font-family: Arial;   
+        margin-top: 80px;
+        font-size: 20px;
+        color: white;
+    }
+    p{
+        font-size: 17px;
+        font-family: arial;
+        padding-left: center;
+    }
+
+    button{
+        border-radius: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: transparent;
+        color: white;
+        border-color: black;
+        width: 200px;
+    }
+    
+    input{
+        padding-right: 1px;
+    }
+</style>
+
+<body>
+  <center>
+    <h2> Super Sayajin  </h2>
+    Qual o nome do guerreiro  <br>
+    <input id="input_nome">
+    <br><br>
+     Qual o ki do guerreiro? <br>
+    <input id="input_ki">
+    <br><br>
+    <button onclick="super_sayajin()"><p>Ver ki em cada forma </p></button>  
+</center>
+</body>
+</html>
+
+<script>
+      function super_sayajin(){
+        var valor = Number(input_ki.value);
+        alert(" O KI do " + input_nome.value + " na sua forma super sayajin é " + (valor * 50) );
+           alert(" Já o KI do " + input_nome.value + " na sua forma super sayajin2 é " + (valor * 100) );
+     } 
+</script>
+    

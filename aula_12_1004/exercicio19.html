@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 19</title>
+</head>
+<body>
+    Quantas xícaras de café com leite já tomou na vida?
+    <input id="input_xicaras">
+    <button onclick="ver()">Ver a quantidade</button>
+    <div id="div_mostar"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        var xicaras = Number(input_xicaras.value);
+
+        for(var contador_xicara = 1; contador_xicara <= xicaras; contador_xicara++ ){
+        for(var contador_leite = 1; contador_leite <= xicaras; contador_leite++){
+            div_mostar.innerHTML +=  contador_leite;
+            for(var contador_cafe = 0; contador_cafe <= xicaras; contador_cafe +=2){
+            div_mostar.innerHTML +=  contador_cafe;
+            }
+            div_mostar.innerHTML += "colheres de café em pó <br>";
+        }
+    }
+    // }
+
+    //contador_leite + "colher de leite  em pó" +
+        
+    }
+</script>

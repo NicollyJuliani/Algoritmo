@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulopolis</title>
+</head>
+
+<body>
+    Qual a quantidade de kWh consomida no mês:
+    <br> <br>
+    <input id="input_kwh">
+    <button onclick="btn_kwh()">Calcular conta de luz </button>
+    <div id="div_kwh"></div>
+</body>
+
+</html>
+
+<script>
+    function btn_kwh() {
+        var kwh = Number(input_kwh.value);
+        var conta = kwh * 0.85;
+        var frase = "A quantidade de kwh consumida é de: " + conta;
+
+        div_kwh.innerHTML = frase;
+
+        if (conta < 100) {
+            div_kwh.innerHTML += conta * 0.10 + ",com mais 10% de desconto";
+        }
+
+    }
+</script>

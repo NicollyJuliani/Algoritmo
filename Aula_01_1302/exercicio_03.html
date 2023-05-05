@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<style>
+    body{
+        background-color: #F0F8FF;
+    }
+    button {
+        border-radius: 15px;
+        font-family: Arial;
+    }
+    input{
+        border-radius: 5px;
+        font-family: Arial;
+    }
+    .formulario{
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 300px;
+        height:250px;
+    }
+
+</style>
+<body>
+    <center>
+   
+        <div class="formulario">
+          <h2><font face="arial">Informe seu time</h2>
+         Qual time você torce? <br>
+         <input value="" id="input_time">
+         <br><br>
+         Quantos mundiais tem seu time?<br>
+         <input value="" id="input_mundial">
+         <br><br>
+         <button onclick="cumprimentar()"> 
+            Amo meu time
+         </button>
+      </font>
+        </div>
+      </center>
+</body>
+</html>
+
+<script>
+        function cumprimentar() {
+        alert('O time ' + input_time.value + ' tem ' + input_mundial.value + " mundiais da FIFA")
+        }
+    
+    </script>

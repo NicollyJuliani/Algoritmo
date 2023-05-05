@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filhos</title>
+</head>
+<body>
+    Quantos filhos: <br><br>
+    <input id="input_filho">
+    <br><br>
+    <button onclick="btn_filho()">Analisar família</button>
+    <div id="div_filho"></div>
+</body>
+</html>
+<script>
+    function btn_filho(){
+        var f = Number(input_filho.value);
+
+        if (f >= 1){
+            div_filho.innerHTML = "Não tem tv, Não tem internet, Não tem video game ";
+            
+        }
+
+        if ( f >= 2){
+            div_filho.innerHTML = "Não tem internet, Não tem tv, Não tem video game ";
+        }
+
+        if (f >= 3 ){
+            div_filho.innerHTML = "Não tem video game, Não tem tv, Não tem internet";
+        }
+        
+        if (f >= 4){
+            div_filho.innerHTML = "Não tem video game, Não tem tv, Não tem internet, Não tem Netflix";
+        }
+    }
+</script>

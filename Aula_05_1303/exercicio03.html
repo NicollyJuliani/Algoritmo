@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Mercado BOM DOCE</title>
+</head>
+<body>
+    Quantidade de chocolate: 
+    <input id="input_chocolate"><br>
+    <button onclick="btn_compra()">Compra</button>
+    <div id="div_compra"></div>
+</body>
+</html>
+
+<script>
+    function btn_compra(){
+        var conta = Number(input_chocolate.value);
+
+        if (conta >= 12){
+            conta *= 2.50;
+            div_compra.innerHTML = `O valor da sua compra foi ${conta}`
+        } else {
+            conta *= 3.00;
+            div_compra.innerHTML = `O valor da sua compra foi ${conta}`
+        }
+    }
+</script>

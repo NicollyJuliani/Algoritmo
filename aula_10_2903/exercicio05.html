@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 05</title>
+</head>
+<body>
+    Peso: <input id="input_peso"> <br>
+    Altura: <input id="input_altura"> <br>
+    <button onclick="verificar()">Verificar IMC</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var peso = Number(input_peso.value);
+        var altura = Number(input_altura.value);
+
+        var valida_campos = peso == 0 || altura == 0;
+        var valida_altura = altura > 100; 
+
+        if(valida_campos){
+            alert("Preencha todos os campos")
+        } 
+        
+        if(valida_altura){
+            var altura = altura / 100;
+        }
+
+        var imc = peso / (altura*altura);
+        var abaixo_peso = imc < 18.5;
+        var peso_ideal = imc >= 18.5 && imc <=24.9
+        var execesso_peso = imc > 24.9 && imc <=30
+        var obesidade = imc >30 && imc <=35;
+        var obesidade_extrema = imc > 35;
+
+        if(abaixo_peso){
+            div_mostrar.innerHTML = `<p style="color:blue;">Abaixo do Peso</p>`;
+        } else if(peso_ideal){
+            div_mostrar.innerHTML = `<p style="color:green;">peso ideal </p>`;
+        }else if(execesso_peso){
+            div_mostrar.innerHTML = `<p style="color:yellow;">excesso de peso</p>`;
+        }else if(obesidade){
+            div_mostrar.innerHTML = `<p style="color:orange">obesidade</p>`;
+        }else if(obesidade_extrema){
+            div_mostrar.innerHTML = `<p style="color:red;">obesidade extrema</p>`;
+        }
+
+        div_mostrar.innerHTML += imc;
+    }
+</script>

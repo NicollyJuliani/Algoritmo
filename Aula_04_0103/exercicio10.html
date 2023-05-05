@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta </title>
+    <style>
+        body {
+            background-color: rgb(209, 199, 218);
+            font-family: Arial;
+            margin-top: 80px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <H2>Conta bancaria </H2>
+    Qual o valor do seu saldo na conta do banco: <br><br>
+    <input id="input_conta">
+    <br><br>
+    <button onclick="btn_conta()"> Verificar finanças </button> 
+    <br> <br> 
+    <div id="div_banco"></div>
+</center>
+</body>
+</html>
+
+<script>
+    function btn_conta(){
+        var c = Number(input_conta.value);
+
+        if (c == 0 ){
+            div_banco.innerHTML = "conta zerada"
+        }
+
+        if (c < 0){
+            div_banco.innerHTML = "Está devendo "
+        }
+
+        if (c > 0){
+            div_banco.innerHTML = "Saldo positivo :)"
+        }
+    }
+</script>

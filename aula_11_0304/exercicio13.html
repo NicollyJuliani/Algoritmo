@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 13</title>
+</head>
+<body>
+    De quantos em quantos dias faz musculação?
+    <input type="number" id="input_musculacao">
+    <button onclick="exibir()">Exibir rotina mensal</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+  
+          function exibir(){
+            var dia = Number(input_musculacao.value);
+            var musculacao = 0; 
+
+            while(musculacao <= 30){
+                if(musculacao % dia == 0){
+                    div_mostrar.innerHTML += `Dia ${musculacao} - Musculação <br>`;
+                } else{
+                    div_mostrar.innerHTML += `Dia ${musculacao} - Comer, dormir <br>`;
+                }
+                musculacao ++;
+            }
+        }
+        
+    
+</script>

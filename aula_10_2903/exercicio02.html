@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 02</title>
+</head>
+<body>
+    Altura: 
+    <input id="input_altura">
+    <button onclick="analisar()">Analisar para esportes</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var altura = Number(input_altura.value);
+
+        var validacao_menor = altura < 1.60;
+        var validacao_maior = altura < 1.85;
+        
+        if(validacao_menor){
+            div_mostrar.innerHTML = `
+            Pode tentar ser piloto(a) de corrida ou <br>
+            pode tentar ser velejador(a)
+            `;
+        } else if(validacao_maior){
+            div_mostrar.innerHTML = `
+            Pode tentar ser jogador de futebol ou <br>
+            pode tentar ser jogador de handbol
+            `
+        }
+    }
+</script>

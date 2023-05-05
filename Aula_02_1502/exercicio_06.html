@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - operações aritmédicas</title>
+</head>
+
+<style>
+    body{
+        background-color: rgb(197, 145, 245);
+        font-family: Arial;   
+        margin-top: 80px;
+        font-size: 20px;
+        color: white;
+    }
+    p{
+        font-size: 17px;
+        font-family: arial;
+        padding-left: center;
+    }
+
+    button{
+        border-radius: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: transparent;
+        color: white;
+        border-color: black;
+        width: 150px;
+    }
+
+    .formulario{
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 400px;
+        height: 290px;
+    }
+
+
+
+</style>
+
+<body>
+  <center>
+    <div class="formulario">
+    <h2> Equipe Lantra </h2>
+    Quanto amigos <input id="input_amigos">
+    <br><br>
+    Valor da pizza <input id="input_pizza">
+    <br><br>
+    <button onclick="pizza()"><p> #LovePizza </p></button>  
+</center>
+</div>
+</body>
+</html>
+
+<script>
+    function  pizza(){
+        var n1 = Number(input_amigos.value);
+        var n2 = Number(input_pizza.value);
+        alert('Cada um dos ' + n1 + ' amigos vai pagar ' + (n2 / n1)  )
+    }
+</script>

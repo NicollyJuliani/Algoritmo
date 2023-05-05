@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<style>
+    body{
+        background-color: #F0F8FF;
+    }
+    button {
+        border-radius: 15px;
+        font-family: Arial;
+    }
+    input{
+        border-radius: 5px;
+        font-family: Arial;
+    }
+    .formulario{
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 300px;
+        height:250px;
+    }
+
+</style>
+<body>
+    <center>
+   
+        <div class="formulario">
+          <h2><font face="arial">Preencha o formulário</h2>
+         Cidade Natal <br>
+         <input value="" id="input_cidade">
+         <br><br>
+         Ano nascimento <br>
+         <input value="" id="input_ano">
+         <br><br>
+         <button onclick="cumprimentar()"> 
+          cadastrar
+         </button>
+      </font>
+        </div>
+      </center>
+</body>
+</html>
+
+<script>
+        function cumprimentar() {
+        alert('Olá, você nasceu na cidade de ' + input_cidade.value + ' em ' + input_ano.value )
+        }
+    
+    </script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 14</title>
+</head>
+<body>
+    Qual sua idade?
+    <input id="input_idade">
+    <button onclick="mostrar()">Ver fases da vida</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function mostrar(){
+        var idade = Number(input_idade.value);
+        var contador = 1;
+
+        var PrimeiraInfancia = "Primeira Infancia";
+        var pre_escola = "Pré escola";
+        var segunda_infancia = "segunda infancia";
+        var adolescencia = "Adolescente";
+        var adulto = "Adulto";
+        var melhor_idade = "Melhor Idade";
+        var matusalem = "matusalém";
+
+        while (contador <= idade){
+            if(idade >= 0 && idade <=4){
+                div_mostrar.innerHTML += `${contador} anos (${PrimeiraInfancia}) <br>`
+            } if(idade > 4 && idade <=6){
+                div_mostrar.innerHTML += `${contador} anos (${pre_escola})<br>`
+            } if(idade > 6 && idade <= 10){
+                div_mostrar.innerHTML += `${contador} anos (${segunda_infancia})<br>`
+            } if(idade >10 &&  idade <=18){
+                div_mostrar.innerHTML += `${contador} anos (${adolescencia})<br>`
+            } if(idade > 18 && idade <= 50){
+                div_mostrar.innerHTML += `${contador} anos (${adulto})<br>`
+            } if(idade >50 && idade > 100){
+                div_mostrar.innerHTML += `${contador} anos (${melhor_idade})<br>`
+            } if(idade > 100){
+                div_mostrar.innerHTML += `${contador} anos (${matusalem})<br>`
+            }
+
+            contador +=1;
+        }
+
+    }
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 02</title>
+</head>
+<body>
+    Destino de viagem <input id="input_destino"> <br>
+    <button onclick="adicionar()">Adicionar</button>
+    <br>
+    <button onclick="primeira_viagem()">Primeira Viagem</button>
+    <button onclick="terceira_viagem()">Terceira Viagem</button>
+    <button  onclick="ultima_viagem()">Ultima Viagem</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    var lista_viagem = [];
+
+    function adicionar(){
+        var viagem = input_destino.value;
+        lista_viagem.push(viagem);
+    }
+
+    function primeira_viagem(){
+     
+        if(lista_viagem.length >= 0){
+            mostrar.innerHTML += `Primeira Viagem: ${lista_viagem[0]} <br>`;
+        }else{
+            mostrar.innerHTML += `ainda não viajou <br>`;
+        }
+    }
+
+    function terceira_viagem(){
+    
+        if(lista_viagem.length < 3){
+            mostrar.innerHTML += `ainda fez não 3ª viagem<br>`;
+        }else{
+            mostrar.innerHTML += `Terceira viagem: ${lista_viagem[2]} <br>`;
+           
+        }
+    }
+
+    function ultima_viagem(){
+      
+        if(lista_viagem.length >= 0){
+            mostrar.innerHTML += `Ultima Viagem: ${lista_viagem[lista_viagem.length -1]} <br>`;
+        }else{
+            mostrar.innerHTML += `ainda não viajou <br>`;
+        }
+    }
+</script>

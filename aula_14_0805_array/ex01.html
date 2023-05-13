@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 01</title>
+</head>
+<body>
+    Pesquisa fruta: <input id="input_pesquisar"> <br>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    function pesquisar(){
+        var fruta = input_pesquisar.value;
+        var listaFruta = ['Banana', 'Uva', 'Manga', 'Jabuticaba', 'Pera' ]
+
+        if(listaFruta.indexOf(fruta) != -1){
+            mostrar.innerHTML = `a fruta ${fruta} existe na lista`;
+        } else{
+            mostrar.innerHTML = `Não existe a fruta ${fruta}`;
+        }
+    }
+</script>

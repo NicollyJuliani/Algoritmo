@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 08</title>
+</head>
+<body>
+    Nomes Alunos: <input id="input_aluno">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="mostra_tela"></div>
+</body>
+</html>
+
+<script>
+    var ListaAlunos = [];
+
+    function cadastrar(){
+        var alunos = input_aluno.value;
+        mostra_tela.innerHTML = "";
+        ListaAlunos.push(alunos);
+
+        for(var i = ListaAlunos.length -1; i >= 0; i--){
+            var alunos_atual = ListaAlunos[i];
+
+            mostra_tela.innerHTML += `${i + 1} - ${alunos_atual} <br>`;
+        }
+    }
+</script>

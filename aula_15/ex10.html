@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 10</title>
+</head>
+<body>
+    Registre o nome das linhas: <input id="input_linha"> <br>
+    <button onclick="Gravar()">Gravar Buzão</button>
+    <div id="mostrar_tela"></div>
+    <br> <br>
+    Pesquise linha: <input id="input_pesquise">
+    <button onclick="pesquise()">Pesquisar</button>
+    <div id="mostrar_pesquisa"></div>
+</body>
+</html>
+<script>
+    lista_linhas = [];
+    
+
+    function Gravar(){
+        var linha = input_linha.value;
+        mostrar_tela.innerHTML = "";
+
+        lista_linhas.push(linha);
+        
+        for (var i = lista_linhas.length - 1; i >= 0; i--){
+            var nome = lista_linhas[i];
+
+            mostrar_tela.innerHTML += `${i + 1} - ${nome} <br>`
+        }
+    }
+
+    function pesquise(){
+        var pesquisar = input_pesquise.value;
+
+        lista_linhas.push(pesquisar);
+
+        if(lista_linhas.indexOf()){
+            mostrar_pesquisa.innerHTML += `você nunca pegou essa linha <br>`;
+        }else {
+            mostrar_pesquisa.innerHTML += `você já pegou essa linha`;
+        }
+    }
+</script>

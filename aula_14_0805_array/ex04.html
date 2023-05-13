@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04</title>
+</head>
+<body>
+    Quais os filmes que mais gosta? <input id="input_filme">
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <br>
+    <button onclick="favoritos()">Ver favoritos</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+    var filmesFavorito = [];
+
+    function cadastrar(){
+        var filme = input_filme.value;
+        filmesFavorito.push(filme)
+    }
+
+    function favoritos(){
+
+        mostrar.innerHTML += `<b>Filmes: </b>` + filmesFavorito + " <br> " + " <b>Total: </b> " + filmesFavorito.length + "<br>";
+
+        if(filmesFavorito.length >= 0){
+            mostrar.innerHTML += `o filme que mais gosta é:  <b> ${filmesFavorito[0]} </b> <br>`
+        } 
+        if(filmesFavorito.length >= 0 ){
+            mostrar.innerHTML += `o filme que menos gosta é: <b> ${filmesFavorito[filmesFavorito.length -1]}</b> <br>`;
+        }
+    }
+</script>
+
+
+
+
+

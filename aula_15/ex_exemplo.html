@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    fruta: <input id="input_fruta"><br>
+    <button onclick="adicionar()">Adicionar</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+    listaFruta = [];
+
+    function adicionar(){
+        var fruta = input_fruta.value;
+        mostrar.innerHTML = "";
+
+        listaFruta.push(fruta);
+
+         for(var i = 0; i < listaFruta.length; i++){
+           var fruta_atual = listaFruta[i];
+
+       mostrar.innerHTML += `${i + 1} - ${fruta_atual} <br>`
+     }
+
+        for (var i = listaFruta.length - 1; i >= 0; i--){
+            var fruta_atual = listaFruta[i];
+
+            mostrar.innerHTML += `${i + 1} - ${fruta_atual} <br>`
+        }
+        
+    }
+</script>

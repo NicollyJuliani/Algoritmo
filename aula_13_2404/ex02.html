@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 01</title>
+</head>
+<body>
+    nome do 1º time: <input id="input_primeiro_time"> <br>
+    Quantas vitorias: <input id="input_vitorias_primeiro_time"> <br>
+    Quantos empates: <input id="input_empates_primeiro_time"> <br>
+    Quantas derrotas: <input id="input_derrotas_primeiro_time"> <br>
+    <br>
+    nome do 2º time: <input id="input_segundo_time"> <br>
+    Quantas vitorias: <input id="input_vitorias_segundo_time"> <br>
+    Quantos empates: <input id="input_empates_segundo_time"> <br>
+    Quantas derrotas: <input id="input_derrotas_segundo_time"> <br>
+    <button onclick="analisar()">Analisar campanha</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var primeiro_time = {
+            nome_primeiro_time: input_primeiro_time.value,
+            vitorias: Number(input_vitorias_primeiro_time.value),
+            empate: Number(input_empates_primeiro_time.value),
+            derrotas: Number(input_derrotas_primeiro_time.value),
+            somarPontosPrimeiroTime: function(){
+                var pontuacao = this.vitorias * 3 + this.empate;
+                div_mostrar.innerHTML += `O time ${this.nome_primeiro_time} o campeonato com ${pontuacao} pontos <br>`
+            }
+        }
+
+        var segundo_time = {
+            nome_segundo_time: input_segundo_time.value,
+            vitorias: Number(input_vitorias_segundo_time.value),
+            empate: Number(input_empates_segundo_time.value),
+            derrotas: Number(input_derrotas_segundo_time.value),
+            somarPontosSegundoTime: function(){
+                var pontuacao = this.vitorias * 3 + this.empate;
+                div_mostrar.innerHTML += `O time ${this.nome_segundo_time} o campeonato com ${pontuacao} pontos`
+            }
+        }
+       
+        primeiro_time.somarPontosPrimeiroTime();
+        segundo_time.somarPontosSegundoTime();
+    }
+    
+</script>

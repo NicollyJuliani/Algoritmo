@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+</head>
+<body>
+    
+Saldo: <div id="div_mostrar_saldo"></div> <br>
+Depósitos: <div id="div_mostrar_deposito"></div> <br>
+Saques:  <div id="div_mostrar_saques"></div> <br>
+    </div> <br>
+    <button onclick="depositar_cem()">Depositar 100</button>
+    <button onclick="sacar_vinte()">Sacar 20</button>
+</body>
+</html>
+
+<script>
+    var saldo = 0 
+    var depositos = 0
+    var saques = 0
+
+    function depositar_cem(){
+        depositos += 1;
+        var deposito = {
+        aumentar_cem: function(){
+            saldo += 100;
+            div_mostrar_saldo.innerHTML = saldo;
+            div_mostrar_deposito.innerHTML = depositos;
+        }
+    }
+    deposito.aumentar_cem();
+    }
+
+    function sacar_vinte(){
+        saques += 1;
+        var sacarVinte = {
+        diminuir_vinte: function(){
+            saldo -= 20;
+            div_mostrar_saldo.innerHTML = saldo;
+            div_mostrar_saques.innerHTML = saques;
+        }
+        }
+        sacarVinte.diminuir_vinte();
+    }
+</script>

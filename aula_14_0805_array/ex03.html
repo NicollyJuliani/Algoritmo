@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+</head>
+<body>
+     Digite o bairro: <input id="input_bairro"> 
+     <button onclick="cadastrar()">Cadastrar bairro</button> <br> 
+    Digite um numero do bairro: <input type="number" id="input_local">
+    <button onclick="moradia()">Relembrar moradia</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    var lista_bairro = [];
+
+    function cadastrar(){
+        var bairro = input_bairro.value;
+        lista_bairro.push(bairro);
+      }
+
+    function moradia(){
+    var numero = Number(input_local.value);
+    
+    if(numero > lista_bairro.length){
+        mostrar.innerHTML = `Você ainda não morou num ${numero}º bairro`;
+    }else{
+        mostrar.innerHTML = lista_bairro[numero - 1];
+    }
+}
+    
+</script>
+

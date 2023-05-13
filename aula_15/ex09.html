@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 09</title>
+</head>
+
+<body>
+    Nome projeto: <input id="input_projeto"><br>
+    <button onclick="registrar()">Registrar projeto</button>
+    <div id="div_mostrar"></div>
+    <br>
+    <button onclick="mostrar_projetos()">Mostrar Projetos</button> <br>
+    <div id="mostra_tela"></div>
+</body>
+
+</html>
+
+<script>
+    var ListaProjetos = [];
+
+    function registrar() {
+        var projeto = input_projeto.value;
+        ListaProjetos.push(projeto);
+        var profissonal = '';
+
+        if (ListaProjetos.length >= 0 && ListaProjetos.length <= 4) {
+            profissonal = `Junior`
+        } else if (ListaProjetos.length >= 5 && ListaProjetos.length <= 12) {
+            profissonal = `Pleno desde o projeto ${ListaProjetos[4]}`
+        } else if (ListaProjetos.length >= 13) {
+           profissonal = `Sênior desde o projeto ${ListaProjetos[12]}`
+        }
+
+        div_mostrar.innerHTML = `Você já fez ${ListaProjetos.length} projetos.
+            Por isso você é um profissional ${profissonal}`
+    }
+
+    function mostrar_projetos() {
+        mostra_tela.innerHTML = " ";
+
+        for(var i = ListaProjetos.length - 1; i >= 0; i--){
+            var projetos = ListaProjetos[i];
+
+            mostra_tela.innerHTML += `${projetos} <br>`
+        }
+      
+    }
+</script>

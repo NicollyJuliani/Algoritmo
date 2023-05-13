@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 05</title>
+</head>
+<body>
+    Digite o nome dos filmes que mais gostam: <input id="input_filmes">
+    <br> <button onclick="cadastrar()">Cadastrar</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+    var listaFilmes = []
+
+    function cadastrar(){
+        var filmes = input_filmes.value;
+        listaFilmes.push(filmes);
+        mostrar.innerHTML = "";
+
+        for(var i = 0; i < listaFilmes.length; i++){
+            var filmea_atual = listaFilmes[i]
+            mostrar.innerHTML += `${i + 1} - ${filmea_atual} <br>`
+        }
+    }
+</script>

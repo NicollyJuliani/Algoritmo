@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04</title>
+</head>
+<body>
+    nome do 1º time: <input id="input_primeiro_time"> <br>
+    Quantas vitorias: <input id="input_vitorias_primeiro_time"> <br>
+    Quantos empates: <input id="input_empates_primeiro_time"> <br>
+    Quantas derrotas: <input id="input_derrotas_primeiro_time"> <br>
+    <br>
+    nome do 2º time: <input id="input_segundo_time"> <br>
+    Quantas vitorias: <input id="input_vitorias_segundo_time"> <br>
+    Quantos empates: <input id="input_empates_segundo_time"> <br>
+    Quantas derrotas: <input id="input_derrotas_segundo_time"> <br>
+    <button onclick="analisar()">Analisar campanha</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+
+        var primeiro_time = {
+            nome_primeiro_time: input_primeiro_time.value,
+            vitorias1: Number(input_vitorias_primeiro_time.value),
+            empate1: Number(input_empates_primeiro_time.value),
+            derrotas1: Number(input_derrotas_primeiro_time.value),
+            somarPontosPrimeiroTime: function(){
+                var pontuacao = this.vitorias1 * 3 + this.empate1;
+                div_mostrar.innerHTML += `O time ${this.nome_primeiro_time} o campeonato com ${pontuacao} pontos <br>`
+            }
+        }
+
+        var segundo_time = {
+            nome_segundo_time: input_segundo_time.value,
+            vitorias2: Number(input_vitorias_segundo_time.value),
+            empate2: Number(input_empates_segundo_time.value),
+            derrotas2: Number(input_derrotas_segundo_time.value),
+            somarPontosSegundoTime: function(){
+                var pontuacao = this.vitorias2 * 3 + this.empate2;
+                div_mostrar.innerHTML += `O time ${this.nome_segundo_time} o campeonato com ${pontuacao} pontos <br>`
+            }
+        }
+
+        var terceiro_time = {
+            nome_terceiro_time: "Juventus da Mooca" ,
+            vitorias3: 12,
+            empate3: 4,
+            derrotas3: 0,
+            somarPontosTerceiroTime: function(){
+                var pontuacao = this.vitorias3 * 3 + this.empate3;
+                div_mostrar.innerHTML += `O time ${this. nome_terceiro_time} o campeonato com ${pontuacao} pontos`
+            
+            }
+        }
+
+        var qtd_partidas_time1 =  primeiro_time.vitorias1 + primeiro_time.empate1 +  primeiro_time.derrotas1;
+        var qtd_partidas_time2 =  segundo_time.vitorias2 + segundo_time.empate2 +  segundo_time.derrotas2;
+        var qtd_partidas_time3 =  terceiro_time.vitorias3 + terceiro_time.empate3 +  terceiro_time.derrotas3;
+        
+        var qtd_partidas = (primeiro_time.qtd_partidas_time1 == segundo_time.qtd_partidas_time2 ) && (segundo_time.qtd_partidas_time2  == terceiro_time.qtd_partidas_time3) &&
+        (primeiro_time.qtd_partidas_time1  == terceiro_time.qtd_partidas_time3)
+
+
+        if(qtd_partidas){
+        if(primeiro_time.somarPontosPrimeiroTime.pontuacao >= segundo_time.somarPontosSegundoTime.pontuacao && 
+        primeiro_time.somarPontosPrimeiroTime.pontuacao >= terceiro_time.somarPontosTerceiroTime.pontuacao){
+            div_mostrar.innerHTML = `` 
+        } if(segundo_time.somarPontosSegundoTime.pontuacao >= primeiro_time.somarPontosPrimeiroTime && 
+        segundo_time.somarPontosSegundoTime.pontuacao >= terceiro_time.somarPontosTerceiroTime.pontuacao){
+
+        } if(terceiro_time.somarPontosTerceiroTime.pontuacao >= primeiro_time.somarPontosPrimeiroTime.pontuacao && 
+        terceiro_time.somarPontosTerceiroTime.pontuacao >= segundo_time.somarPontosSegundoTime.pontuacao ){
+
+
+        }
+        }else{
+            alert("os times não tem a mesma quantidade de partidas")
+        }
+
+
+
+        
+    }
+    
+</script>
+    

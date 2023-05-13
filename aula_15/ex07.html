@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 07</title>
+</head>
+<body>
+    Nome de filmes favoritos: <input id="input_filmes">
+    <br> <button onclick="cadastrar()">Cadastrar</button>
+    <div id="mostrar"></div>
+    </body>
+</html>
+
+<script>
+     var listaFilmes = []
+
+function cadastrar(){
+    var filmes = input_filmes.value;
+    listaFilmes.push(filmes);
+    mostrar.innerHTML = "";
+
+    for(var i = 0; i < listaFilmes.length; i++){
+        var filmea_atual = listaFilmes[i]
+
+        if(i % 2 == 0){
+            mostrar.innerHTML += `<span style="color: blue;">${i + 1} - ${filmea_atual} </span><br>`
+        } else{
+            mostrar.innerHTML += `<span style="color: red;">${i + 1} - ${filmea_atual} </span><br>`
+        }
+    }
+}
+</script>

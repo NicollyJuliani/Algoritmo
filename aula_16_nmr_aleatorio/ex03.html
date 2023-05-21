@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03</title>
+</head>
+<body>
+    <button onclick="jogar()">Jogar Dado</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    function jogar(){
+    var max = 6;
+    var min = 1;
+    var intervalo = max - min + 1;
+    var aleatorio = min + Math.random() * intervalo;
+
+    mostrar.innerHTML += "";
+        mostrar.innerHTML += parseInt(aleatorio) + "<br>";
+
+        if(parseInt(aleatorio) == 1){
+            mostrar.innerHTML += `<img src="https://clipground.com/images/1-dice-clipart-5.png" style="width: 150px;">`
+        }
+         if(parseInt(aleatorio) == 2){
+            mostrar.innerHTML += `<img src="https://www.clipartkey.com/mpngs/m/138-1380054_2-on-a-dice.png" style="width: 150px;">`
+        }
+         if(parseInt(aleatorio) == 3){
+            mostrar.innerHTML += `<img src="https://www.clipartkey.com/mpngs/m/173-1736266_number-3-dice-clipart-black-and-white-3.png" style="width: 150px;">`
+        }
+        if(parseInt(aleatorio) == 4){
+            mostrar.innerHTML += `<img src="https://th.bing.com/th/id/OIP.fhm3w9wMJe1L9V2i9OeCFwHaHa?pid=ImgDet&rs=1" style="width: 150px;">`
+        }
+        if(parseInt(aleatorio) == 5){
+            mostrar.innerHTML += `<img src="https://www.lawebdelprogramador.com/codigo/archivos3/dado5.png" style="width: 150px;">` 
+        }
+        if(parseInt(aleatorio) == 6)
+        mostrar.innerHTML += `<img src="https://img2.freepng.es/20190701/py/kisspng-dice-clip-art-scalable-vector-graphics-image-numbe-bestanddice-6a-b-svg-wikipedia-5d19ed2428bff6.7426007215619801961669.jpg" style="width: 150px;">` 
+    }
+</script>

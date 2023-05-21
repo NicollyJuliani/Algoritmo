@@ -24,6 +24,9 @@
         var linha = input_linha.value;
         mostrar_tela.innerHTML = "";
 
+            // lista_linhas.unshift();
+            // lista_linhas.reverse()
+
         lista_linhas.push(linha);
         
         for (var i = lista_linhas.length - 1; i >= 0; i--){
@@ -36,12 +39,17 @@
     function pesquise(){
         var pesquisar = input_pesquise.value;
 
-        lista_linhas.push(pesquisar);
+        var listaOcorrencias = [];
+        
+        for(var posicao = 0; posicao < lista_linhas.length; posicao++){
+            var linhaAtual = lista_linhas[posicao];
 
-        if(lista_linhas.indexOf()){
-            mostrar_pesquisa.innerHTML += `você nunca pegou essa linha <br>`;
-        }else {
-            mostrar_pesquisa.innerHTML += `você já pegou essa linha`;
+            if(pesquisar == linhaAtual){
+                
+            }
+
         }
+
+
     }
 </script>

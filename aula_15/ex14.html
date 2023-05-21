@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 14</title>
+</head>
+<body>
+    nome produto: <input id="input_produto"> <br>
+    preço compra: <input id="input_compra"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="relatorio()">Relatório de estoque</button>
+    <div id="mostrar_tela"></div>
+</body>
+</html>
+
+<script>
+    var listaProduto = [];
+    var listaCompra = [];
+
+    function cadastrar(){
+        var produto = input_produto.value;
+        var compra = Number(input_compra.value);
+
+        listaCompra.push(compra);
+        listaProduto.push(produto);
+    }
+
+    function relatorio(){
+       
+        mostrar_tela.innerHTML = "";
+        mostrar_tela.innerHTML = `Total de produtos ${listaProduto.length} <br>`;
+
+        for(var i = 0; i < listaProduto.length; i++){          
+            var nome_produto = listaProduto[i];
+            var lista_atual = listaCompra[i];
+            var preco_venda = listaCompra[i] * 1.25;
+
+        mostrar_tela.innerHTML += `Produto ${i + 1}: ${nome_produto} <br>
+        Preço de compra R$${lista_atual}. Vende por ${preco_venda.toFixed(2)} <br> `;
+    }
+
+           
+    }
+</script>

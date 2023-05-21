@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="jogar()">Jogar</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    function jogar(){
+    var max = 3;
+    var min = 1;
+    var intervalo = max - min + 1;
+    var aleatorio = min + Math.random() * intervalo;
+
+    if(parseInt(aleatorio) == 1){
+        mostrar.innerHTML += `<img src="https://juanfariasdev.github.io/Pedra-Papel-Tesoura/img/opcoes/pedra.png" style="width: 200px;">`
+    }else if(parseInt(aleatorio) == 2){
+        mostrar.innerHTML += `<img src="https://th.bing.com/th/id/OIP.t2NVJF6-X8nJdqnstyjkxgHaFj?pid=ImgDet&rs=1" style="width: 200px;">`
+    }else if(parseInt(aleatorio) == 3){
+        mostrar.innerHTML += `<img src="https://th.bing.com/th/id/R.e0b7531420c1d9c0b4a2853e6cf3c240?rik=3b0ZZ0X3uptqFw&riu=http%3a%2f%2fsweetclipart.com%2fmultisite%2fsweetclipart%2ffiles%2fscissors_blue_silver.png&ehk=nUhMcevI6zulXBQP7agADshRfS9NGywZMP8vhOy%2buPc%3d&risl=&pid=ImgRaw&r=0" style="width: 200px;">`
+    }
+
+}
+</script>

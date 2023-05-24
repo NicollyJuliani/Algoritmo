@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex 15</title>
 </head>
+
 <body>
     nome produto: <input id="input_produto"> <br>
     preço compra: <input id="input_compra"> <br>
@@ -13,13 +15,14 @@
     <button onclick="relatorio()">Relatório de estoque</button>
     <div id="mostrar_tela"></div>
 </body>
+
 </html>
 
 <script>
     var listaProduto = [];
     var listaCompra = [];
 
-    function cadastrar(){
+    function cadastrar() {
         var produto = input_produto.value;
         var compra = Number(input_compra.value);
 
@@ -27,36 +30,43 @@
         listaProduto.push(produto);
     }
 
-    function relatorio(){
-       
+    function relatorio() {
+
         mostrar_tela.innerHTML = "";
         mostrar_tela.innerHTML = `Total de produtos ${listaProduto.length} <br>`;
+        var soma = 0;
 
-        for(var i = 0; i < listaProduto.length; i++){          
+        for (var i = 0; i < listaProduto.length; i++) {
             var nome_produto = listaProduto[i];
             var lista_atual = listaCompra[i];
             var preco_venda = listaCompra[i] * 1.25;
-          
             soma += listaCompra[i];
+            var media = soma / listaProduto.length
 
-               
-        
-        mostrar_tela.innerHTML += `Produto ${i + 1}: ${nome_produto} <br>
-        Preço de compra R$${lista_atual}. Vende por ${preco_venda.toFixed(2)} <br> `;
+            mostrar_tela.innerHTML += `Produto ${i + 1}: ${nome_produto} <br>
+        Preço de compra R$${lista_atual}. Vende por ${preco_venda.toFixed(2)} <br> <br>`;
+        }
+
+        var maiorPreco = listaCompra[0];
+        var maiorProduto = listaProduto[0];
+        var menorPreco = listaCompra[0];
+        var menorProduto = listaProduto[0];
+
+        for (var i = 1; i < listaProduto.length; i++) {
+            if (listaCompra[i] > maiorPreco) {
+                maiorProduto = listaProduto[i];
+            }
+            if (listaCompra[i] < menorPreco) {
+                menorProduto = listaProduto[i];
+            }
+
+        }
+
+        mostrar_tela.innerHTML += `
+        O produto mais caro é: ${maiorProduto}<br>
+        O produto mais barato é: ${menorProduto} <br>
+        A soma dos produtos é igual a: ${soma.toFixed(2)} <br>
+        A média dos produtos: ${media.toFixed(2)} <br>`
     }
 
-    for (var contador = 0; contador < listaCompra.length; i++) {
-                var soma = 0;
-                soma = soma + listaCompra[contador];
-          mostrar_tela.innerHTML += `soma: ${soma}`
-}
-    }
-
-   
-
-
-
-    
-           
-    
 </script>

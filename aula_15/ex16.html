@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 16</title>
+</head>
+<body>
+    digite um número qualquer: <input id="input_nmr_qualuqer">
+    <button onclick="analisar()">Analisar histórico</button>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+    var listaNumero = [];
+
+    function analisar(){
+        var numero = Number(input_nmr_qualuqer.value);
+
+        listaNumero.push(numero);
+
+        div_mostrar.innerHTML = "";
+        
+        var menorNumero = listaNumero[0];
+        var maiorNumero = listaNumero[0];
+        
+        for(var i = 0; i < listaNumero.length; i++){
+
+            div_mostrar.innerHTML += `${i + 10} - Número: ${listaNumero[i]} <br>`;
+
+            if(listaNumero[i] > maiorNumero){
+                maiorNumero = listaNumero[i]
+            }
+            if(listaNumero[i] < menorNumero){
+                menorNumero = listaNumero[i]
+            }
+        }
+
+        div_mostrar.innerHTML += ` maior número: ${maiorNumero} <br>
+        menor numero: ${menorNumero} <br>`
+
+    }
+</script>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 17</title>
+</head>
+
+<body>
+    <div id="registro">
+        <h1>Análise de performace de alunos - Registros</h1>
+        <br>
+        Entre com o nome do aluno: <input id="nome_aluno"> <br>
+        entre com a nota do aluno: <input id="nota_aluno">
+        <br>
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="analisar()">Analisar</button>
+        <div id="mostrar_tela"></div>
+    </div>
+
+    <div id="pesqusia" style="visibility: hidden; margin-top: -160px;">
+        <h1>Análise de perfonrmace de alunos </h1>
+        <br>
+        Entre com intervalor de notas <input id="nota_de" placeholder="de"> <input id="nota_ate" placeholder="ate">
+        <br> <button onclick="pesquisa()">Pesqusiar</button>
+        <div id="mostrar"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var listaAlunos = [];
+    var listaNotas = [];
+
+    function registrar() {
+        var aluno = nome_aluno.value;
+        var nota = Number(nota_aluno.value);
+
+        mostrar_tela.innerHTML = "";
+
+        if (aluno == "") {
+            mostrar_tela.innerHTML = "Campo inválido, registre um aluno"
+        } else if (nota < 0 || nota > 10) {
+            mostrar_tela.innerHTML = "As notas devem estar entre 0 e 10"
+        } else {
+            listaAlunos.push(aluno);
+            listaNotas.push(nota);
+            for (var i = listaAlunos.length - 1; i >= 0; i--) {
+                var nomeAluno = listaAlunos[i];
+                var notaAluno = listaNotas[i];
+
+                mostrar_tela.innerHTML += `${i + 1} - Aluno: ${nomeAluno} 
+            <br> nota: ${notaAluno} <br>`
+            }
+        }
+    }
+
+    function analisar() {
+        var analisar = document.getElementById("pesqusia");
+        var registro = document.getElementById("registro");
+
+        analisar.style.visibility = 'visible';
+        registro.style.visibility = 'hidden';
+
+    }
+
+    function pesquisa() {
+        var de = Number(nota_de.value);
+        var ate = Number(nota_ate.value);
+
+        validacao = de < 0 || de > 10 && ate < 0 || ate > 10;
+        var contagem = 0;
+        var maiorNota = listaNotas[0];
+        var menorNota = listaNotas[0];
+        var soma = 0;
+
+        mostrar_tela.innerHTML = "";
+
+
+        if (validacao) {
+            mostrar.innerHTML = "Campo invalido"
+        }
+        else if (de <= ate) {
+
+            for (var i = 0; i < listaAlunos.length; i++) {
+                if (de <= listaNotas[i] && ate >= listaNotas[i]) {
+                    mostrar.innerHTML += `O Aluno ${listaAlunos[i]} ficou com a nota ${listaNotas[i]} <br> `;
+                    contagem++
+                }
+
+                if (listaNotas[i] > maiorNota) {
+                    maiorNota = listaNotas[i]
+                }
+                if (listaNotas[i] < menorNota) {
+                    menorNota = listaNotas[i]
+                }
+                soma += listaNotas[i];
+                var media = soma / listaNotas.length;
+            }
+
+        } else {
+            mostrar.innerHTML = "O número de tem que ser menor que o ate";
+        }
+
+        mostrar.innerHTML += `Total de alunos registrados: ${listaAlunos.length} <br>
+                Total de alunos listados: ${contagem} <br>
+                Maior nota: ${maiorNota} <br>
+                Menor Nota: ${menorNota} <br>
+                Média da nota: ${media} `
+
+    }
+</script>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 18</title>
+</head>
+
+<body>
+    <div id="registro">
+        <h1>Análise de performace de alunos - Registros</h1>
+        <br>
+        Nome do aluno: <input id="nome_aluno"> <br>
+        Nota AC1: <input id="nota_ac1"> <br>
+        Nota AC2: <input id="nota_ac2"> <br>
+        Nota AC3: <input id="nota_ac3">
+        <br>
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="analisar()">Analisar</button>
+        <div id="mostrar_tela"></div>
+    </div>
+
+    <div id="pesqusia" style="visibility: hidden; margin-top: -100px;">
+        <h1>Análise de perfonrmace de alunos - pesquisa</h1>
+        <br>
+        Entre com intervalor de notas <input id="nota_de" placeholder="de"> <input id="nota_ate" placeholder="ate">
+        <br> <button onclick="pesquisa()">Pesqusiar</button> <br>
+        <select id="id_pesquisa">
+            <option value="todas">Ver todas as notas</option>
+            <option value="nota_ac1">Ver notas AC1</option>
+            <option value="nota_ac2">Ver notas AC2</option>
+            <option value="nota_ac3">Ver notas AC3</option>
+        </select>
+        <div id="mostrar"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var listaAlunos = [];
+
+    function registrar() {
+        mostrar_tela.innerHTML = "";
+
+        if (nome_aluno.value == " ") {
+            mostrar_tela.innerHTML = "Campo inválido, registre um aluno"
+        } else if (nota_ac1.value < 0 || nota_ac1.value > 10 && nota_ac2.value < 0 || nota_ac2.value
+            > 10 && nota_ac3.value < 0 || nota_ac3.value > 10) {
+            mostrar_tela.innerHTML = "As notas devem estar entre 0 e 10"
+        } else {
+            var alunos = {
+                nome: nome_aluno.value,
+                AC1: Number(nota_ac1.value),
+                AC2: Number(nota_ac2.value),
+                AC3: Number(nota_ac3.value)
+            }
+
+            listaAlunos.push(alunos);
+
+            for (var i = listaAlunos.length - 1; i >= 0; i--) {
+                mostrar_tela.innerHTML += `${i + 1} - Aluno: ${listaAlunos[i].nome} 
+            <br> nota AC1: ${listaAlunos[i].AC1} <br>
+            Nota AC2: ${listaAlunos[i].AC2} <br>
+            Nota AC3: ${listaAlunos[i].AC3} <br><br>`
+
+            }
+        }
+    }
+
+    function analisar() {
+        var analisar = document.getElementById("pesqusia");
+        var registro = document.getElementById("registro");
+
+        analisar.style.visibility = 'visible';
+        registro.style.visibility = 'hidden';
+
+    }
+
+    function pesquisa() {
+        var de = Number(nota_de.value)
+        var ate = Number(nota_ate.value);
+
+        var validacao = de < 0 || de > 10 && ate < 0 || ate > 10;
+        var select = id_pesquisa.value;
+
+        mostrar_tela.innerHTML = " ";
+
+
+        if (validacao) {
+            mostrar.innerHTML = "Campo invalido"
+        }
+        else if (de <= ate) {
+
+            for (var i = 0; i < listaAlunos.length; i++) {
+
+
+                if (select == "todas") {
+                    if (de <= listaAlunos[i].AC1 && ate >= listaAlunos[i].AC1) {
+                        mostrar.innerHTML += `O Aluno ${listaAlunos[i].nome} 
+                    ficou com a nota na AC1: ${listaAlunos[i].AC1} <br>`
+                    }
+                    if (de <= listaAlunos[i].AC2 && ate >= listaAlunos[i].AC2) {
+                        mostrar.innerHTML += `O Aluno ${listaAlunos[i].nome} 
+                    ficou com a nota na AC2: ${listaAlunos[i].AC2} <br>`
+                    }
+                    if (de <= listaAlunos[i].AC3 && ate >= listaAlunos[i].AC3) {
+                        mostrar.innerHTML += `O Aluno ${listaAlunos[i].nome} 
+                    ficou com a nota na AC3: ${listaAlunos[i].AC3} <br>`
+                    }
+                } else if (select == "nota_ac1") {
+                    if (de <= listaAlunos[i].AC1 && ate >= listaAlunos[i].AC1) {
+                        mostrar.innerHTML += `O Aluno ${listaAlunos[i].nome} 
+                    ficou com a nota na AC1: ${listaAlunos[i].AC1} <br>`
+                    }
+                } else if (select == "nota_ac2") {
+                    if (de <= listaAlunos[i].AC2 && ate >= listaAlunos[i].AC2) {
+                        mostrar.innerHTML += `O Aluno ${listaAlunos[i].nome} 
+                    ficou com a nota na AC2: ${listaAlunos[i].AC2} <br>`
+                    }
+                } else if (select == "nota_ac3") {
+                    if (de <= listaAlunos[i].AC3 && ate >= listaAlunos[i].AC3) {
+                        mostrar.innerHTML += `O Aluno ${listaAlunos[i].nome} 
+                    ficou com a nota na AC3: ${listaAlunos[i].AC3} <br>`
+                    }
+                }
+
+            }
+        } else {
+            mostrar.innerHTML = "Validacao incompleta";
+        }
+
+    }
+
+</script>
